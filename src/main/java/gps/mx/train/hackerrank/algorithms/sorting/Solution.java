@@ -8,25 +8,8 @@ public class Solution {
     public static void insertIntoSorted(int[] numbers) {
         int indexLeft = numbers.length - 1;
         int unsortNumber = numbers[indexLeft];
-        int numberToEvaluate = numbers[numbers.length - 2];
-        if (numberToEvaluate > unsortNumber) {
-            numbers[indexLeft] = numberToEvaluate;
-        } else {
-            numbers[indexLeft] = unsortNumber;
-        }
-        printArray(numbers);
-
-        numberToEvaluate = numbers[numbers.length - 3];
-        indexLeft--;
-        if (numberToEvaluate > unsortNumber) {
-            numbers[indexLeft] = numberToEvaluate;
-        } else {
-            numbers[indexLeft] = unsortNumber;
-        }
-        printArray(numbers);
-
-        int indexIteration = 4;
-        sortwith(numbers, --indexLeft, unsortNumber, indexIteration);
+        int indexIteration = 2;
+        sortwith(numbers, indexLeft, unsortNumber, indexIteration);
     }
 
     private static void sortwith(int[] numbers, int indexLeft, int unsortNumber, int indexIteration) {
